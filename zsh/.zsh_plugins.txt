@@ -1,0 +1,15 @@
+# completions -> should be the first thing
+mattmc3/ez-compinit
+zsh-users/zsh-completions
+
+# syntax highlighting -> prefer fast version
+# zsh-users/zsh-syntax-highlighting
+zdharma-continuum/fast-syntax-highlighting
+
+# interactive goodies -> autocomplete and history search
+# marlonrichert/zsh-autocomplete # this is a bit annoying, maybe search for config...
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-history-substring-search
+
+# nvm
+lukechilds/zsh-nvm
