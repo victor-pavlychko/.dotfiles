@@ -2,3 +2,6 @@
 Thumbs.db
 *.swp
 *.tmp
+
+# do not track lazy.nvim lock file
+nvim/lazy-lock.json

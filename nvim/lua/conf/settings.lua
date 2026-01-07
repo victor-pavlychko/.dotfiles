@@ -11,8 +11,14 @@ vim.opt.scrolloff = 4
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 
+vim.opt.wildmenu = true
+vim.opt.wildmode = "longest:full,full"
+vim.opt.cmdheight = 1
+vim.opt.pumblend = 10
+vim.opt.completeopt = { "menu", "menuone", "noselect" }
+
 -- set line numbers
-vim.opt.nu = true                 
+vim.opt.nu = true
 vim.opt.relativenumber = false
 
 -- set tab size to 4 spaces
