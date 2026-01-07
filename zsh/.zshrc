@@ -15,6 +15,7 @@ fi
 
 # configure plugins pre-load
 export NVM_NO_USE=true
+export VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 export ANTIDOTE_HOME="${HOME}/.cache/antidote"
@@ -45,8 +46,8 @@ zle_highlight=(region:standout special:standout suffix:bold isearch:underline pa
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 HISTORY_SUBSTRING_SEARCH_FUZZY=1
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=(underline bold)
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+bindkey "${terminfo[kcuu1]}" history-substring-search-up
+bindkey "${terminfo[kcud1]}" history-substring-search-down
 
 # aliases
 alias ls='ls --color=auto'
