@@ -20,6 +20,18 @@ export NVM_NO_USE=true
 export ANTIDOTE_HOME="${HOME}/.cache/antidote"
 antidote load
 
+# History
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt APPEND_HISTORY          # don't overwrite history file
+setopt INC_APPEND_HISTORY      # write history as you run commands
+setopt SHARE_HISTORY           # share history across terminals/sessions
+setopt HIST_IGNORE_DUPS        # ignore duplicate entries
+setopt HIST_REDUCE_BLANKS      # remove superfluous blanks
+setopt EXTENDED_HISTORY        # add timestamps to history entries (useful)
+
 # interactive completions
 zstyle ':completion:*' menu select interactive
 
@@ -41,7 +53,3 @@ alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias vi='nvim'
 alias tx='tmux new -As work'
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
