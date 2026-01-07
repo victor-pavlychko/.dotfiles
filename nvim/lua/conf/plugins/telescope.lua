@@ -1,6 +1,6 @@
 return {
   'nvim-telescope/telescope.nvim',
-  -- tag = '*',
+  tag = 'v0.1.9',  -- latest compatible with neovim 0.9, needed on ubuntu lts...
   dependencies = { 'nvim-lua/plenary.nvim' },
   config = function()
     require('telescope').setup({})
