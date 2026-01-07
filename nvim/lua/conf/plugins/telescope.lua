@@ -3,7 +3,18 @@ return {
   tag = 'v0.1.9',  -- latest compatible with neovim 0.9, needed on ubuntu lts...
   dependencies = { 'nvim-lua/plenary.nvim' },
   config = function()
-    require('telescope').setup({})
+    require('telescope').setup({
+      defaults = {
+        file_ignore_patterns = {
+          "^.git/",      -- ignore .git directory
+        },
+      },
+      pickers = {
+        find_files = {
+          hidden = true
+        }
+      }
+    })
     -- local builtin = require('telescope.builtin')
     -- vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
     -- vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
