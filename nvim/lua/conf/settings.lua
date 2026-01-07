@@ -1,3 +1,7 @@
+-- colorscheme
+vim.cmd("colorscheme darkplus")
+vim.cmd("TransparentEnable")
+
 -- random settings
 vim.opt.wrap = false
 -- vim.opt.hlsearch = false
