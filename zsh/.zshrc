@@ -39,6 +39,7 @@ bindkey '^[[B' history-substring-search-down
 # aliases
 alias ls='ls --color=auto'
 alias ll='ls -lh'
+alias vi='nvim'
 alias tx='tmux new -As work'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!

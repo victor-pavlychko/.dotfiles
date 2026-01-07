@@ -25,7 +25,8 @@ function install_config_module() {
     ln -sf "$(realpath $1)" "${HOME}/.config/$1"
 }
 
+# need to install software: zsh, tmux, nvim, git
+
 install_root_module zsh
 install_root_module tmux
 install_config_module nvim
-
