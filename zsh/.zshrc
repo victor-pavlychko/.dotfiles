@@ -9,8 +9,8 @@ fi
 # source antidote
 if which brew 2>&1 >/dev/null; then
     source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
-elif [ -D "~/.antidote" ]; then
-    source ~/.antidote/antidote.zsh
+elif [ -d "${HOME}/.antidote" ]; then
+    source "${HOME}/.antidote/antidote.zsh"
 fi
 
 # configure plugins pre-load
