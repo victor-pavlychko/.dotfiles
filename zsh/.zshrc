@@ -1,9 +1,16 @@
-# starship prompt
+# prompt
 if which starship 2>&1 >/dev/null; then
     eval "$(starship init zsh)"
 else
-    PROMPT=$'\n%F{cyan}%B %~%b%f\n%B%# %(?.%F{green}.%F{red})❯%f%b '
-    RPROMPT='%(?.%s.%F{red}✖ %B%?%f%b )at %F{yellow}%B%*%f%b'
+    function _prompt_python_venv() {
+        if [[ -n "${VIRTUAL_ENV}" ]]; then
+            echo " with %F{yellow} $(basename "${VIRTUAL_ENV}")%f"
+        fi
+    }
+
+    setopt prompt_subst
+    PROMPT=$'\n%F{cyan}%B %~%b%f$(_prompt_python_venv)\n%B%# %(?.%F{green}.%F{red})❯%f%b '
+    RPROMPT=$'%(?.%s.%F{red}✖ %B%?%f%b )at %F{yellow}%B%*%f%b'
 fi
 
 # source antidote
