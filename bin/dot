@@ -1,0 +1,40 @@
+#!/bin/bash
+
+set -euo pipefail
+
+cd "${HOME}/.dotfiles"
+
+function do_pull() {
+    git pull
+
+    # reload configs
+    tmux source "${HOME}/.tmux.conf"
+}
+
+function do_diff() {
+    git add .
+    git diff --staged
+}
+
+function do_push() {
+    git commit -a -m "${1}"
+    git push
+}
+
+function main() {
+    case "${1}" in
+        pull|update)
+            do_pull
+            ;;
+
+        diff)
+            do_diff
+            ;;
+
+        push)
+            do_push "${2}"
+            ;;
+    esac
+}
+
+main $*

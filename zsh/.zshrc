@@ -46,8 +46,20 @@ zle_highlight=(region:standout special:standout suffix:bold isearch:underline pa
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 HISTORY_SUBSTRING_SEARCH_FUZZY=1
 HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND=(underline bold)
-bindkey "${terminfo[kcuu1]}" history-substring-search-up
-bindkey "${terminfo[kcud1]}" history-substring-search-down
+
+case $(uname -s) in
+    Linux)
+        bindkey "${terminfo[kcuu1]}" history-substring-search-up
+        bindkey "${terminfo[kcud1]}" history-substring-search-down
+        ;;
+    Darwin)
+        bindkey "^[[A" history-substring-search-up
+        bindkey "^[[B" history-substring-search-down
+        ;;
+esac
+
+# add ~/.dotfiles/bin
+export PATH="${HOME}/.dotfiles/bin:$PATH"
 
 # aliases
 alias ls='ls --color=auto'
