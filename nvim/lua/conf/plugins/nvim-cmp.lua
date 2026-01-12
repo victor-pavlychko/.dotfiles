@@ -3,6 +3,7 @@ return {
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
+      'nvim-tree/nvim-web-devicons',
       -- "hrsh7th/cmp-nvim-lsp",   -- LSP completions (optional if you use LSP)
       "hrsh7th/cmp-buffer",     -- buffer words
       "hrsh7th/cmp-path",       -- filesystem paths
@@ -11,78 +12,65 @@ return {
     config = function()
       local cmp = require("cmp")
 
-      -- Better completion UX
-      -- vim.opt.completeopt = { "menu", "menuone", "noselect" } -- recommended for cmp
-
       cmp.setup({
         completion = {
           -- autocomplete = true, -- show popup automatically
           completeopt = "menu,menuone,noinsert",
         },
 
-        -- Mappings: arrows and Enter
+        -- window = {
+        --   completion = cmp.config.window.bordered(),
+        --   documentation = cmp.config.window.bordered(),
+        -- },
+
         mapping = {
-          -- Navigate completion menu
-          ["<Down>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then cmp.select_next_item() else fallback() end
-          end, { "i", "c" }),
-          ["<Up>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then cmp.select_prev_item() else fallback() end
-          end, { "i", "c" }),
-
-          -- Accept with Enter (when item selected)
+          ["<Up>"] = cmp.mapping(function(fallback)if cmp.visible() then cmp.select_prev_item() else fallback() end end, { "i", "c" }),
+          ["<Down>"] = cmp.mapping(function(fallback) if cmp.visible() then cmp.select_next_item() else fallback() end end, { "i", "c" }),
+          ["<Esc>"] = cmp.mapping(function(fallback) if cmp.visible() then cmp.close() else fallback() end end, { "i", "c" }),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
-
-          -- Optional: allow Esc to close menu without accepting
-          ["<Esc>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then cmp.close() else fallback() end
-          end, { "i", "c" }),
         },
 
-        -- Minimal sources (fast and minimal)
         sources = cmp.config.sources({
-          { name = "nvim_lsp" },  -- keep if you use LSP (recommended)
+          -- { name = "nvim_lsp" },
           { name = "path" },
           { name = "buffer" },
         }),
 
-        -- Keep items simple and small
-        experimental = { ghost_text = false, native_menu = false },
+        experimental = {
+          ghost_text = false,
+          native_menu = false
+        },
       })
 
-      -- ===== Cmdline setup =====
       -- `/` and `?` use buffer source (search)
-      -- cmp.setup.cmdline({ "/", "?" }, {
-      --   mapping = cmp.mapping.preset.cmdline({
-      --     -- Up/Down work in cmdline too
-      --     ["<Down>"] = cmp.mapping(function(fallback)
-      --       if cmp.visible() then cmp.select_next_item() else fallback() end
-      --     end),
-      --     ["<Up>"] = cmp.mapping(function(fallback)
-      --       if cmp.visible() then cmp.select_prev_item() else fallback() end
-      --     end),
-      --     ["<CR>"] = cmp.mapping.confirm({ select = true }),
-      --   }),
-      --   sources = {
-      --     { name = "buffer" },
-      --   },
-      -- })
+      cmp.setup.cmdline({ "/", "?" }, {
+        mapping = cmp.mapping.preset.cmdline({
+          ["<Up>"] = cmp.mapping(function(fallback) if cmp.visible() then cmp.select_prev_item() else fallback() end end),
+          ["<Down>"] = cmp.mapping(function(fallback) if cmp.visible() then cmp.select_next_item() else fallback() end end),
+          ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        }),
+
+        sources = {
+          { name = "buffer" },
+        },
+      })
 
       -- `:` commandline uses path + cmdline sources
       cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline({
-          ["<Down>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then cmp.select_next_item() else fallback() end
-          end),
-          ["<Up>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then cmp.select_prev_item() else fallback() end
-          end),
+          ["<Up>"] = cmp.mapping(function(fallback) if cmp.visible() then cmp.select_prev_item() else fallback() end end),
+          ["<Down>"] = cmp.mapping(function(fallback) if cmp.visible() then cmp.select_next_item() else fallback() end end),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }),
+
         sources = cmp.config.sources({
           { name = "path" },
           { name = "cmdline" },
         }),
+
+        matching = {
+          disallow_symbol_nonprefix_matching = false
+        }
       })
     end,
   },
