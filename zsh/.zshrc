@@ -66,6 +66,7 @@ case $(uname -s) in
 esac
 
 # add ~/.dotfiles/bin
+export PATH="${HOME}/.local/bin:$PATH"
 export PATH="${HOME}/.dotfiles/bin:$PATH"
 
 # aliases
