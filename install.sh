@@ -6,31 +6,45 @@ cd $SCRIPT_DIR
 
 shopt -s dotglob nullglob
 
-function install_root_module() {
-    for f in ${1}/*; do
+# Symlinks a single file to a destination directory in the home folder.
+function link_directory_as_whole() {
+    source=$1
+    destination=$2
+
+    mkdir -p "${HOME}/${destination}"
+
+    source_file="$(realpath "${source}")"
+    destination_file="${HOME}/${destination}/$(basename "${source}")"
+
+    echo "Symlinking ${destination_file} -> ${source_file}"
+    ln -sfn "${source_file}" "${destination_file}"
+}
+
+# Symlinks all items in a directory, to a destination directory in the home folder.
+function link_directory_contents() {
+    source=$1
+    destination=$2
+
+    mkdir -p "${HOME}/${destination}"
+
+    for f in "${source}"/*; do
         case "$(basename "$f")" in
             .|..|.DS_Store|Thumbs.db|*.swp|*.tmp)
             continue
             ;;
         esac
 
-        echo "Symlinking $f"
+        source_file="$(realpath "${f}")"
+        destination_file="${HOME}/${destination}/$(basename "${f}")"
 
-	if [ -f "$f" ]; then
-            ln -sf "$(realpath "$f")" "${HOME}/$(basename "$f")"
-        fi
+        echo "Symlinking ${destination_file} -> ${source_file}"
+        ln -sfn "${source_file}" "${destination_file}"
     done
-}
-
-function install_config_module() {
-    mkdir -p "${HOME}/.config"
-
-    echo "Symlinking $1"
-    ln -sf "$(realpath $1)" "${HOME}/.config/$1"
 }
 
 # need to install software: zsh, tmux, nvim, git
 
-install_root_module zsh
-install_root_module tmux
-install_config_module nvim
+link_directory_contents zsh .
+link_directory_contents tmux .
+link_directory_as_whole nvim .config
+link_directory_contents claude .claude
