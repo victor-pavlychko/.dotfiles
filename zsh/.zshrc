@@ -13,10 +13,14 @@ else
     RPROMPT=$'%(?.%s.%F{red}✖ %B%?%f%b )at %F{yellow}%B%*%f%b'
 fi
 
-# source antidote
+# antidote zsh plugin manager
 if which brew 2>&1 >/dev/null; then
     source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
-elif [ -d "${HOME}/.antidote" ]; then
+else
+    if [[ ! -d "${HOME}/.antidote" ]]; then
+        git clone --depth=1 https://github.com/mattmc3/antidote.git "${HOME}/.antidote"
+    fi
+
     source "${HOME}/.antidote/antidote.zsh"
 fi
 
@@ -72,5 +76,6 @@ export PATH="${HOME}/.dotfiles/bin:$PATH"
 # aliases
 alias ls='ls --color=auto'
 alias ll='ls -lh'
+alias lla='ls -lah'
 alias vi='nvim'
 alias tx='tmux new -As work'
