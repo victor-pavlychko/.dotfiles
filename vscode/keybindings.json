@@ -1,0 +1,64 @@
+[
+  // MARK: - Left sidebar a-la Xcode
+
+  {
+    "key": "cmd+1",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "cmd+2",
+    "command": "workbench.view.search"
+  },
+  {
+    "key": "cmd+3",
+    "command": "workbench.view.scm"
+  },
+  {
+    "key": "cmd+4",
+    "command": "workbench.view.debug"
+  },
+  {
+    "key": "cmd+5",
+    "command": "workbench.view.extensions"
+  },
+  {
+    "key": "cmd+6",
+    "command": "workbench.view.testing.focus"
+  },
+
+  // MARK: - Terminal
+
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+  },
+  {
+    "key": "cmd+n",
+    "command": "workbench.action.terminal.new",
+    "when": "terminalFocus && !terminalEditorFocus"
+  },
+  {
+    // Prevent cmd+w from closing the file when the terminal is focused,
+    "key": "cmd+w",
+    "command": "",
+    "when": "terminalFocus && !terminalEditorFocus"
+  },
+
+  // MARK: - AI sidebar
+
+  // {
+  //   "key": "cmd+shift+i",
+  //   "command": "chatgpt.newChat",
+  //   "when": "!(auxiliaryBarVisible && activeAuxiliary == 'workbench.view.extension.codexViewContainer')",
+  // },
+  {
+    "key": "cmd+shift+i",
+    "command": "workbench.action.toggleAuxiliaryBar",
+    // "when": "auxiliaryBarVisible && activeAuxiliary == 'workbench.view.extension.codexViewContainer'",
+  },
+  {
+    "key": "cmd+i",
+    "command": "-geminicodeassist.showinEditor",
+    "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && shouldRegisterInEditorCommand && !inGeminiDiffView && !isInDiffEditor"
+  },
+]
