@@ -1,112 +1,163 @@
 {
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.accessibilitySupport": "off",
-    "editor.fontFamily": "Liga SFMono Nerd Font",
-    "editor.fontLigatures": true,
-    "git.openDiffOnClick": false,
-    "javascript.updateImportsOnPaste.enabled": false,
-    "scm.defaultViewMode": "tree",
-    "typescript.updateImportsOnPaste.enabled": false,
-    "window.commandCenter": true,
-    "workbench.iconTheme": "catppuccin-mocha",
-    "workbench.tree.renderIndentGuides": "always",
-    "workbench.colorCustomizations": {
-        // Dim tree indent guides
-        "tree.indentGuidesStroke": "#80808011",
-        "tree.inactiveIndentGuidesStroke": "#80808011",
+  // Shell
+  "extensions.ignoreRecommendations": true,
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "window.commandCenter": true,
+  "git.openDiffOnClick": false,
+  "git.openRepositoryInParentFolders": "never",
+  "scm.defaultViewMode": "tree",
 
-        // Dim whitespace characters and code indent guides
-        "editorWhitespace.foreground": "#80808022",
-        "editorIndentGuide.background1": "#80808011",
-        "editorIndentGuide.activeBackground1": "#80808033",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb, bun.lock",
+    "*.db": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.jsonnet": "${capture}.json",
+    "requirements.txt": "requirements-*.txt"
+  },
 
-        // VScode-like terminal colors
-        "terminal.ansiBlack": "#272c36",
-        "terminal.ansiBlue": "#81a1c1",
-        "terminal.ansiBrightBlack": "#4c566a",
-        "terminal.ansiBrightBlue": "#81a1c1",
-        "terminal.ansiBrightCyan": "#8fbcbb",
-        "terminal.ansiBrightGreen": "#a3be8c",
-        "terminal.ansiBrightMagenta": "#b48ead",
-        "terminal.ansiBrightRed": "#bf616a",
-        "terminal.ansiBrightWhite": "#eceff4",
-        "terminal.ansiBrightYellow": "#ebcb8b",
-        "terminal.ansiCyan": "#88c0d0",
-        "terminal.ansiGreen": "#a3be8c",
-        "terminal.ansiMagenta": "#7d7c9b",
-        "terminal.ansiRed": "#bf616a",
-        "terminal.ansiWhite": "#e5e9f0",
-        "terminal.ansiYellow": "#ebcb8b",
-        // "terminal.background": "#191c22",
-        "terminal.foreground": "#d8dee9",
-        "terminal.selectionBackground": "#434c5e55",
-        "terminalCursor.background": "#8fbcbb22",
-        "terminalCursor.foreground": "#8fbcbb",
+  // Editor
+  "editor.accessibilitySupport": "off",
+  "editor.fontFamily": "'Liga SFMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.lineNumbers": "on",
+  "editor.renderWhitespace": "all",
+  "editor.minimap.enabled": true,
+  "files.trimTrailingWhitespace": true,
 
-        // Ghostty-like terminal colors
-        // "terminal.ansiBlack": "#1d1f21",
-        // "terminal.ansiRed": "#cc6566",
-        // "terminal.ansiGreen": "#b6bd68",
-        // "terminal.ansiYellow": "#f0c674",
-        // "terminal.ansiBlue": "#82a2be",
-        // "terminal.ansiMagenta": "#b294bb",
-        // "terminal.ansiCyan": "#8abeb7",
-        // "terminal.ansiWhite": "#c4c8c6",
-        // "terminal.ansiBrightBlack": "#666666",
-        // "terminal.ansiBrightRed": "#d54e53",
-        // "terminal.ansiBrightGreen": "#b9ca4b",
-        // "terminal.ansiBrightYellow": "#e7c547",
-        // "terminal.ansiBrightBlue": "#7aa6da",
-        // "terminal.ansiBrightMagenta": "#c397d8",
-        // "terminal.ansiBrightCyan": "#70c0b1",
-        // "terminal.ansiBrightWhite": "#eaeaea",
-        // "terminal.background": "#282c34",
-        // "terminal.foreground": "#ffffff",
-        // "terminalCursor.background": "#ffffff22",
-        // "terminalCursor.foreground": "#ffffff",
-        // "terminal.selectionBackground": "#ffffff55",
-        // "terminal.selectionForeground": "#282c34",
+  // Themes
+  "workbench.colorTheme": "Experimental Dark",
+  "workbench.iconTheme": "catppuccin-macchiato",
+  "workbench.tree.renderIndentGuides": "always",
+
+  "catppuccin-icons.associations.folders": {
+    "notebooks": "folder_storybook",
+    "vendor": "folder_packages",
+    "infra": "folder_cloud",
+  },
+
+  "workbench.colorCustomizations": {
+    // Dim tree indent guides
+    "tree.indentGuidesStroke": "#80808011",
+    "tree.inactiveIndentGuidesStroke": "#80808011",
+    // Dim whitespace characters and code indent guides
+    "editorWhitespace.foreground": "#80808022",
+    "editorIndentGuide.background1": "#80808011",
+    "editorIndentGuide.activeBackground1": "#80808033",
+    // VScode-like terminal colors
+    "terminal.ansiBlack": "#272c36",
+    "terminal.ansiBlue": "#81a1c1",
+    "terminal.ansiBrightBlack": "#4c566a",
+    "terminal.ansiBrightBlue": "#81a1c1",
+    "terminal.ansiBrightCyan": "#8fbcbb",
+    "terminal.ansiBrightGreen": "#a3be8c",
+    "terminal.ansiBrightMagenta": "#b48ead",
+    "terminal.ansiBrightRed": "#bf616a",
+    "terminal.ansiBrightWhite": "#eceff4",
+    "terminal.ansiBrightYellow": "#ebcb8b",
+    "terminal.ansiCyan": "#88c0d0",
+    "terminal.ansiGreen": "#a3be8c",
+    "terminal.ansiMagenta": "#7d7c9b",
+    "terminal.ansiRed": "#bf616a",
+    "terminal.ansiWhite": "#e5e9f0",
+    "terminal.ansiYellow": "#ebcb8b",
+    // "terminal.background": "#191c22",
+    "terminal.foreground": "#d8dee9",
+    "terminal.selectionBackground": "#434c5e55",
+    "terminalCursor.background": "#8fbcbb22",
+    "terminalCursor.foreground": "#8fbcbb",
+    // Ghostty-like terminal colors
+    // "terminal.ansiBlack": "#1d1f21",
+    // "terminal.ansiRed": "#cc6566",
+    // "terminal.ansiGreen": "#b6bd68",
+    // "terminal.ansiYellow": "#f0c674",
+    // "terminal.ansiBlue": "#82a2be",
+    // "terminal.ansiMagenta": "#b294bb",
+    // "terminal.ansiCyan": "#8abeb7",
+    // "terminal.ansiWhite": "#c4c8c6",
+    // "terminal.ansiBrightBlack": "#666666",
+    // "terminal.ansiBrightRed": "#d54e53",
+    // "terminal.ansiBrightGreen": "#b9ca4b",
+    // "terminal.ansiBrightYellow": "#e7c547",
+    // "terminal.ansiBrightBlue": "#7aa6da",
+    // "terminal.ansiBrightMagenta": "#c397d8",
+    // "terminal.ansiBrightCyan": "#70c0b1",
+    // "terminal.ansiBrightWhite": "#eaeaea",
+    // "terminal.background": "#282c34",
+    // "terminal.foreground": "#ffffff",
+    // "terminalCursor.background": "#ffffff22",
+    // "terminalCursor.foreground": "#ffffff",
+    // "terminal.selectionBackground": "#ffffff55",
+    // "terminal.selectionForeground": "#282c34",
+  },
+
+  // Notebooks
+  "notebook.lineNumbers": "on",
+  "notebook.output.scrolling": true,
+  "notebook.output.textLineLimit": 20,
+  "jupyter.askForKernelRestart": false,
+  "jupyter.widgetScriptSources": [
+    "jsdelivr.com",
+    "unpkg.com"
+  ],
+
+  // AI coding
+  "chat.mcp.gallery.enabled": true,
+  "inlineChat.enableV2": true,
+  "chat.viewSessions.orientation": "stacked",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "chatgpt.commentCodeLensEnabled": false,
+  "claudeCode.preferredLocation": "sidebar",
+  "claudeCode.allowDangerouslySkipPermissions": true,
+
+  // Terminal
+  "terminal.integrated.suggest.enabled": false,
+  "terminal.integrated.initialHint": false,
+
+  // JS performace
+  "javascript.updateImportsOnPaste.enabled": false,
+  "typescript.updateImportsOnPaste.enabled": false,
+  "typescript.tsserver.maxTsServerMemory": 8192,
+
+  // File types
+  "files.associations": {
+      "*.json5": "json5"
+  },
+
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
     },
-    "redhat.telemetry.enabled": false,
-    "extensions.ignoreRecommendations": true,
-    "explorer.fileNesting.enabled": true,
-    "explorer.fileNesting.patterns": {
-        "*.ts": "${capture}.js",
-        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-        "*.jsx": "${capture}.js",
-        "*.tsx": "${capture}.ts",
-        "*.jsonnet": "${capture}.json",
-        "tsconfig.json": "tsconfig.*.json",
-        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb"
-    },
-    "git.openRepositoryInParentFolders": "never",
-    "diffEditor.renderSideBySide": false,
-    "github.copilot.nextEditSuggestions.enabled": true,
-    "workbench.secondarySideBar.defaultVisibility": "hidden",
-    "[dockercompose]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2,
-        "editor.autoIndent": "advanced",
-        "editor.defaultFormatter": "redhat.vscode-yaml"
-    },
-    "[github-actions-workflow]": {
-        "editor.defaultFormatter": "redhat.vscode-yaml"
-    },
-    "python.analysis.typeCheckingMode": "standard",
-    "chat.mcp.gallery.enabled": true,
-    "typescript.tsserver.maxTsServerMemory": 8192,
-    "claudeCode.preferredLocation": "sidebar",
-    "terminal.integrated.suggest.enabled": false,
-    "claudeCode.allowDangerouslySkipPermissions": true,
-    "workbench.colorTheme": "Experimental Dark",
-    "editor.minimap.enabled": false,
-    "files.associations": {
-        "*.json5": "json5"
-    },
-    "chat.viewSessions.orientation": "stacked",
-    "terminal.integrated.initialHint": false,
-    "chatgpt.commentCodeLensEnabled": false,
-    "editor.renderWhitespace": "all",
+  },
+
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Extensions
+  "powermode.enabled": false,
+  "dbcode.resultLocation": "panel",
+  "dbcode.connections": [],
+  "geminicodeassist.displayInlineContextHint": false,
+  "redhat.telemetry.enabled": false,
+  "python.analysis.typeCheckingMode": "standard",
 }

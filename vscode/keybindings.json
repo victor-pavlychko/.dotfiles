@@ -26,6 +26,14 @@
     "command": "workbench.view.testing.focus"
   },
 
+  // MARK: - Debugger
+
+  {
+    "key": "cmd+\\",
+    "command": "editor.debug.action.toggleBreakpoint",
+    "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus"
+  },
+
   // MARK: - Terminal
 
   {

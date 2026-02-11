@@ -48,5 +48,7 @@ link_directory_contents zsh .
 link_directory_contents tmux .
 link_directory_as_whole nvim .config
 link_directory_contents claude .claude
-# link_directory_contents vscode "Library/Application Support/Code/User"
 
+if [[ "$(uname -s)" == "Darwin" ]]; then
+    link_directory_contents vscode "Library/Application Support/Code/User"
+fi
