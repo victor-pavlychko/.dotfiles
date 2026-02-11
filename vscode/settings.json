@@ -1,6 +1,4 @@
 {
-    // "catppuccin.italicKeywords": false,
-    // "catppuccin.italicComments": true,
     "[typescript]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -13,9 +11,18 @@
     "typescript.updateImportsOnPaste.enabled": false,
     "window.commandCenter": true,
     "workbench.iconTheme": "catppuccin-mocha",
-    // "workbench.secondarySideBar.defaultVisibility": "visible",
+    "workbench.tree.renderIndentGuides": "always",
     "workbench.colorCustomizations": {
-        // VScode-like
+        // Dim tree indent guides
+        "tree.indentGuidesStroke": "#80808011",
+        "tree.inactiveIndentGuidesStroke": "#80808011",
+
+        // Dim whitespace characters and code indent guides
+        "editorWhitespace.foreground": "#80808022",
+        "editorIndentGuide.background1": "#80808011",
+        "editorIndentGuide.activeBackground1": "#80808033",
+
+        // VScode-like terminal colors
         "terminal.ansiBlack": "#272c36",
         "terminal.ansiBlue": "#81a1c1",
         "terminal.ansiBrightBlack": "#4c566a",
@@ -38,7 +45,7 @@
         "terminalCursor.background": "#8fbcbb22",
         "terminalCursor.foreground": "#8fbcbb",
 
-        // Ghostty
+        // Ghostty-like terminal colors
         // "terminal.ansiBlack": "#1d1f21",
         // "terminal.ansiRed": "#cc6566",
         // "terminal.ansiGreen": "#b6bd68",
@@ -92,9 +99,6 @@
     "typescript.tsserver.maxTsServerMemory": 8192,
     "claudeCode.preferredLocation": "sidebar",
     "terminal.integrated.suggest.enabled": false,
-    "geminicodeassist.project": "prj-corp-p-gemini-0a58",
-    "geminicodeassist.agentYoloMode": true,
-    "http.systemCertificatesNode": true,
     "claudeCode.allowDangerouslySkipPermissions": true,
     "workbench.colorTheme": "Experimental Dark",
     "editor.minimap.enabled": false,
@@ -103,4 +107,6 @@
     },
     "chat.viewSessions.orientation": "stacked",
     "terminal.integrated.initialHint": false,
+    "chatgpt.commentCodeLensEnabled": false,
+    "editor.renderWhitespace": "all",
 }
