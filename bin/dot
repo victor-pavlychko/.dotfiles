@@ -10,7 +10,7 @@ function main() {
             ;;
 
         *)
-            cd "${HOME}/.dotfiles" && exec git "$@"
+            cd "${HOME}/.dotfiles" && git "$@"
             ;;
     esac
 }
