@@ -34,8 +34,14 @@
     "when": "debuggersAvailable && disassemblyViewFocus || debuggersAvailable && editorTextFocus"
   },
 
-  // MARK: - Terminal
+  // MARK: - Terminal and panel
 
+  {
+    // Focus the panel if not focused, toggle otherwise
+    "key": "cmd+j",
+    "command": "workbench.action.focusPanel",
+    "when": "!panelFocus"
+  },
   {
     "key": "cmd+t",
     "command": "workbench.action.terminal.toggleTerminal",
@@ -54,17 +60,12 @@
 
   // MARK: - AI sidebar
 
-  // {
-  //   "key": "cmd+shift+i",
-  //   "command": "chatgpt.newChat",
-  //   "when": "!(auxiliaryBarVisible && activeAuxiliary == 'workbench.view.extension.codexViewContainer')",
-  // },
   {
     "key": "cmd+shift+i",
     "command": "workbench.action.toggleAuxiliaryBar",
-    // "when": "auxiliaryBarVisible && activeAuxiliary == 'workbench.view.extension.codexViewContainer'",
   },
   {
+    // Remove Gemini Code Assist keybinding since it conflicts with the built-in AI chat
     "key": "cmd+i",
     "command": "-geminicodeassist.showinEditor",
     "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && shouldRegisterInEditorCommand && !inGeminiDiffView && !isInDiffEditor"
