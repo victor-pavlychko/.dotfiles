@@ -3,28 +3,58 @@
 
   {
     "key": "cmd+1",
-    "command": "workbench.view.explorer"
+    "command": "workbench.view.explorer",
+  },
+  {
+    "key": "cmd+1",
+    "command": "workbench.action.closeSidebar",
+    "when": "sideBarVisible && activeViewlet == 'workbench.view.explorer'"
   },
   {
     "key": "cmd+2",
     "command": "workbench.view.search"
   },
   {
+    "key": "cmd+2",
+    "command": "workbench.action.closeSidebar",
+    "when": "sideBarVisible && activeViewlet == 'workbench.view.search'"
+  },
+  {
     "key": "cmd+3",
     "command": "workbench.view.scm"
+  },
+  {
+    "key": "cmd+3",
+    "command": "workbench.action.closeSidebar",
+    "when": "sideBarVisible && activeViewlet == 'workbench.view.scm'"
   },
   {
     "key": "cmd+4",
     "command": "workbench.view.debug"
   },
   {
+    "key": "cmd+4",
+    "command": "workbench.action.closeSidebar",
+    "when": "sideBarVisible && activeViewlet == 'workbench.view.debug'"
+  },
+  {
     "key": "cmd+5",
     "command": "workbench.view.extensions"
+  },
+  {
+    "key": "cmd+5",
+    "command": "workbench.action.closeSidebar",
+    "when": "sideBarVisible && activeViewlet == 'workbench.view.extensions'"
   },
   {
     "key": "cmd+6",
     "command": "workbench.view.testing.focus"
   },
+  // {
+  //   "key": "cmd+6",
+  //   "command": "workbench.action.closeSidebar",
+  //   "when": "sideBarVisible && activeViewlet == 'workbench.view.testing.focus'"
+  // },
 
   // MARK: - Debugger
 
@@ -43,7 +73,7 @@
     "when": "!panelFocus"
   },
   {
-    "key": "cmd+t",
+    "key": "cmd+`",
     "command": "workbench.action.terminal.toggleTerminal",
   },
   {
@@ -64,8 +94,10 @@
     "key": "cmd+shift+i",
     "command": "workbench.action.toggleAuxiliaryBar",
   },
+
+  // MARK: - Remove Gemini Code Assist keybinding since it conflicts with the built-in AI chat
+
   {
-    // Remove Gemini Code Assist keybinding since it conflicts with the built-in AI chat
     "key": "cmd+i",
     "command": "-geminicodeassist.showinEditor",
     "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && shouldRegisterInEditorCommand && !inGeminiDiffView && !isInDiffEditor"
