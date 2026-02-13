@@ -66,14 +66,18 @@
 
   // MARK: - Terminal and panel
 
+  // {
+  //   // Focus the panel if not focused, toggle otherwise
+  //   "key": "cmd+j",
+  //   "command": "workbench.action.focusPanel",
+  //   "when": "!panelFocus"
+  // },
+  // {
+  //   "key": "cmd+`",
+  //   "command": "workbench.action.terminal.toggleTerminal",
+  // },
   {
-    // Focus the panel if not focused, toggle otherwise
-    "key": "cmd+j",
-    "command": "workbench.action.focusPanel",
-    "when": "!panelFocus"
-  },
-  {
-    "key": "cmd+`",
+    "key": "cmd+escape",
     "command": "workbench.action.terminal.toggleTerminal",
   },
   {
@@ -102,4 +106,27 @@
     "command": "-geminicodeassist.showinEditor",
     "when": "authLoggedIn && config.geminicodeassist.enable && editorTextFocus && shouldRegisterInEditorCommand && !inGeminiDiffView && !isInDiffEditor"
   },
+
+  // MARK: - Remove Claude Code hijaking Cmd+Escape
+
+  // {
+  //   "key": "cmd+escape",
+  //   "command": "-claude-vscode.blur",
+  //   "when": "!config.claudeCode.useTerminal && !editorTextFocus"
+  // },
+  // {
+  //   "key": "cmd+escape",
+  //   "command": "-claude-vscode.focus",
+  //   "when": "editorTextFocus && !config.claudeCode.useTerminal"
+  // },
+  // {
+  //   "key": "shift+cmd+escape",
+  //   "command": "-claude-vscode.editor.open",
+  //   "when": "!config.claudeCode.useTerminal"
+  // },
+  // {
+  //   "key": "cmd+escape",
+  //   "command": "-claude-vscode.terminal.open.keyboard",
+  //   "when": "config.claudeCode.useTerminal"
+  // },
 ]
