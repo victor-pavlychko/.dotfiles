@@ -35,7 +35,7 @@
   "files.trimTrailingWhitespace": true,
 
   // Themes
-  "workbench.colorTheme": "Experimental Dark",
+  "workbench.colorTheme": "Dark Modern",
   "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.tree.renderIndentGuides": "always",
 
@@ -116,7 +116,7 @@
   "chat.viewSessions.orientation": "stacked",
   "github.copilot.nextEditSuggestions.enabled": true,
   "chatgpt.commentCodeLensEnabled": false,
-  "claudeCode.preferredLocation": "sidebar",
+  "claudeCode.preferredLocation": "panel",
   "claudeCode.allowDangerouslySkipPermissions": true,
 
   // Terminal
