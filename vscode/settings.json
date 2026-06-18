@@ -1,12 +1,20 @@
 {
-  // Shell
+  // Discovery
   "extensions.ignoreRecommendations": true,
-  "workbench.secondarySideBar.defaultVisibility": "hidden",
-  "window.commandCenter": true,
-  "git.openDiffOnClick": false,
   "git.openRepositoryInParentFolders": "never",
-  "scm.defaultViewMode": "tree",
 
+  // Shell
+  "window.nativeTabs": true,
+  "window.systemColorTheme": "dark",
+  "workbench.browser.showInTitleBar": false,
+  "workbench.editor.closeEmptyGroups": false,
+  "workbench.editor.doubleClickTabToToggleEditorGroupSizes": "maximize",
+  "workbench.editor.useModal": "off",
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "workbench.settings.alwaysShowAdvancedSettings": true,
+  "workbench.startupEditor": "none",
+
+  // Explorer
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
@@ -22,22 +30,36 @@
     "*.sqlite": "${capture}.${extname}-*",
     "*.sqlite3": "${capture}.${extname}-*",
     "*.jsonnet": "${capture}.json",
-    "requirements.txt": "requirements-*.txt"
+    "requirements.txt": "requirements-*.txt",
   },
+
+  "freshFileExplorer.autoExpandDepth": 10,
+  "freshFileExplorer.blameHeatmap.autoApply": false,
+  "freshFileExplorer.defaultOpenChangesMode": true,
+  "freshFileExplorer.description.showAuthor": false,
+  "freshFileExplorer.description.showCommitMessage": false,
+  "freshFileExplorer.description.showStatus": false,
+  "freshFileExplorer.flatList.labelStyle": "filename",
+  "freshFileExplorer.heatmap.enabled": false,
+  "freshFileExplorer.showBaseBranchSync": false,
+  "freshFileExplorer.showCurrentBranchSync": false,
+  "freshFileExplorer.timeWindows": [],
 
   // Editor
   "editor.accessibilitySupport": "off",
   "editor.fontFamily": "'Liga SFMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.lineNumbers": "on",
+  "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
-  "editor.minimap.enabled": true,
+  "diffEditor.renderSideBySide": false,
   "files.trimTrailingWhitespace": true,
 
   // Themes
   "workbench.colorTheme": "Dark Modern",
   "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.tree.renderIndentGuides": "always",
+  "excalidraw.theme": "dark",
 
   "catppuccin-icons.associations.folders": {
     "notebooks": "folder_storybook",
@@ -105,32 +127,22 @@
   "notebook.output.scrolling": true,
   "notebook.output.textLineLimit": 20,
   "jupyter.askForKernelRestart": false,
-  "jupyter.widgetScriptSources": [
-    "jsdelivr.com",
-    "unpkg.com"
-  ],
+  "jupyter.widgetScriptSources": ["jsdelivr.com", "unpkg.com"],
 
   // AI coding
-  "chat.mcp.gallery.enabled": true,
-  "inlineChat.enableV2": true,
-  "chat.viewSessions.orientation": "stacked",
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "chatgpt.commentCodeLensEnabled": false,
-  "claudeCode.preferredLocation": "panel",
-  "claudeCode.allowDangerouslySkipPermissions": true,
+  // "chat.mcp.gallery.enabled": true,
 
   // Terminal
   "terminal.integrated.suggest.enabled": false,
   "terminal.integrated.initialHint": false,
 
   // JS performace
-  "javascript.updateImportsOnPaste.enabled": false,
-  "typescript.updateImportsOnPaste.enabled": false,
-  "typescript.tsserver.maxTsServerMemory": 8192,
+  "js/ts.updateImportsOnPaste.enabled": false,
+  "js/ts.tsserver.maxMemory": 8192,
 
   // File types
   "files.associations": {
-      "*.json5": "json5"
+    "*.json5": "json5",
   },
 
   "[dockercompose]": {
@@ -141,23 +153,24 @@
     "editor.quickSuggestions": {
       "other": true,
       "comments": false,
-      "strings": true
+      "strings": true,
     },
   },
 
   "[github-actions-workflow]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "redhat.vscode-yaml",
   },
 
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
 
   // Extensions
+  // "geminicodeassist.displayInlineContextHint": false,
+  // "python.analysis.typeCheckingMode": "standard",
+  "chatgpt.commentCodeLensEnabled": false,
+  "claudeCode.allowDangerouslySkipPermissions": true,
+  "claudeCode.preferredLocation": "panel",
   "powermode.enabled": false,
-  "dbcode.resultLocation": "panel",
-  "dbcode.connections": [],
-  "geminicodeassist.displayInlineContextHint": false,
   "redhat.telemetry.enabled": false,
-  "python.analysis.typeCheckingMode": "standard",
 }
