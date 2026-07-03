@@ -4,6 +4,7 @@
   "git.openRepositoryInParentFolders": "never",
 
   // Shell
+  "window.title": "🌿 ${activeRepositoryBranchName}${separator}📂 ${rootName}",
   "window.nativeTabs": true,
   "window.systemColorTheme": "dark",
   "workbench.browser.showInTitleBar": false,
@@ -35,7 +36,7 @@
 
   "freshFileExplorer.autoExpandDepth": 10,
   "freshFileExplorer.blameHeatmap.autoApply": false,
-  "freshFileExplorer.defaultOpenChangesMode": true,
+  "freshFileExplorer.defaultOpenChangesMode": false,
   "freshFileExplorer.description.showAuthor": false,
   "freshFileExplorer.description.showCommitMessage": false,
   "freshFileExplorer.description.showStatus": false,
@@ -50,6 +51,7 @@
   "editor.fontFamily": "'Liga SFMono Nerd Font', Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
   "editor.lineNumbers": "on",
+  // "editor.largeFileOptimizations": false,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
   "diffEditor.renderSideBySide": false,
@@ -65,6 +67,7 @@
     "notebooks": "folder_storybook",
     "vendor": "folder_packages",
     "infra": "folder_cloud",
+    "stubs": "folder_types",
   },
 
   "workbench.colorCustomizations": {
@@ -172,5 +175,6 @@
   "claudeCode.allowDangerouslySkipPermissions": true,
   "claudeCode.preferredLocation": "panel",
   "powermode.enabled": false,
+  "python.locator": "js",
   "redhat.telemetry.enabled": false,
 }
