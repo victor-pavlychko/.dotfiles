@@ -2,6 +2,16 @@ return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
-    require("lualine").setup()
+    require("lualine").setup({
+      options = {
+        theme = "darkplus",
+        icons_enabled = true,
+
+        disabled_filetypes = {
+          statusline = { 'neo-tree' },
+          winbar = { 'neo-tree' },
+        }
+      }
+    })
   end
 }

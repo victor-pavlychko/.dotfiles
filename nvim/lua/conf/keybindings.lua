@@ -12,9 +12,18 @@ local function smart_home()
   end
 end
 
+vim.keymap.set("n", "<M-q>", "<cmd>qa<cr>")
+vim.keymap.set("n", "<M-[>", "<cmd>bp<cr>")
+vim.keymap.set("n", "<M-]>", "<cmd>bn<cr>")
+
+vim.keymap.set("i", "<M-q>", "<C-o><cmd>qa<cr>")
+vim.keymap.set("i", "<M-[>", "<C-o><cmd>bp<cr>")
+vim.keymap.set("i", "<M-]>", "<C-o><cmd>bn<cr>")
+
 vim.keymap.set("x", ">", ">gv", { noremap = true, silent = true })
 vim.keymap.set("x", "<", "<gv", { noremap = true, silent = true })
 
+vim.keymap.set('n', '<M-e>', "<cmd>Neotree toggle<cr>", {})
 vim.keymap.set('n', '<M-p>', "<cmd>Telescope find_files<cr>", {})
 vim.keymap.set('n', '<M-P>', "<cmd>Telescope commands<cr>", {})
 

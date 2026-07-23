@@ -1,6 +1,6 @@
 -- colorscheme
-vim.cmd("colorscheme darkplus")
-vim.cmd("TransparentEnable")
+vim.cmd("colorscheme visual_studio_code")
+-- vim.cmd("TransparentEnable")
 
 -- random settings
 vim.opt.wrap = false
@@ -10,6 +10,8 @@ vim.opt.termguicolors = true
 vim.opt.scrolloff = 4
 vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
+vim.opt.mouse = "a"
+vim.opt.showtabline = 2
 
 vim.opt.wildmenu = true
 vim.opt.wildmode = "longest:full,full"
@@ -32,3 +34,12 @@ vim.opt.smartindent = true
 -- vim.opt.backup = false
 -- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 -- vim.opt.undofile = true
+
+-- auto-start neotree
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    if vim.fn.argc() == 0 then
+      vim.cmd("Neotree show")
+    end
+  end,
+})
