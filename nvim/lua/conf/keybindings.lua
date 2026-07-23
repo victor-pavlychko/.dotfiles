@@ -25,6 +25,7 @@ vim.keymap.set("x", "<", "<gv", { noremap = true, silent = true })
 
 vim.keymap.set('n', '<M-e>', "<cmd>Neotree toggle<cr>", {})
 vim.keymap.set('n', '<M-p>', "<cmd>Telescope find_files<cr>", {})
+vim.keymap.set('n', '<M-F>', "<cmd>Telescope live_grep<cr>", {})
 vim.keymap.set('n', '<M-P>', "<cmd>Telescope commands<cr>", {})
 
 vim.keymap.set("n", "<M-b>", "b", { noremap = true })

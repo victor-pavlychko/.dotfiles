@@ -6,8 +6,9 @@ return {
     require('telescope').setup({
       defaults = {
         file_ignore_patterns = {
-          "^.venv/",    -- ignore python .venv directory
-          "^.git/",     -- ignore .git directory
+          "node_modules/",
+          "%.venv/",
+          "%.git/",
         },
       },
       pickers = {

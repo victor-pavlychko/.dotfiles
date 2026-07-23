@@ -15,15 +15,13 @@ return {
     return {
       options = {
         mode = "buffers",
-        themmable = true,
-
-        diagnostics = "nvim_lsp",
-
+        themable = true,
         always_show_bufferline = true,
-        separator_style = "thin",
 
-        show_buffer_close_icons = true,
-        show_close_icon = false,
+        -- diagnostics = "nvim_lsp",
+        -- separator_style = "none",
+        -- show_buffer_close_icons = true,
+        -- show_close_icon = false,
 
         -- Avoid bufferline's default force-delete behavior.
         close_command = safe_delete,
@@ -41,6 +39,10 @@ return {
             separator = true,
           },
         },
+
+        -- custom_areas = {
+        --   right = require("visual_studio_code").get_bufferline_right(),
+        -- },
 
         -- diagnostics_indicator = function(count, level)
         --   local icon = level:match("error") and " "
