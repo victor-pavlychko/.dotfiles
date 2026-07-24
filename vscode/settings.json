@@ -61,7 +61,7 @@
   "files.trimTrailingWhitespace": true,
 
   // Themes
-  "workbench.colorTheme": "Dark Modern",
+  "workbench.colorTheme": "Dark Modern 2026",
   "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.tree.renderIndentGuides": "always",
   "excalidraw.theme": "dark",
@@ -142,7 +142,8 @@
 
   // JS performace
   "js/ts.updateImportsOnPaste.enabled": false,
-  "js/ts.tsserver.maxMemory": 8192,
+  "js/ts.tsserver.maxMemory": 16384,
+  "typescript.tsserver.maxTsServerMemory": 16384,
 
   // Extensions
   "chatgpt.commentCodeLensEnabled": false,
