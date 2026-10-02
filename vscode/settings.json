@@ -129,6 +129,21 @@
     // "terminal.selectionForeground": "#282c34",
   },
 
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "punctuation.definition.comment",
+        ],
+        "settings": {
+          "foreground": "#628d4e",
+          "fontStyle": "italic",
+        },
+      },
+    ],
+  },
+
   // Notebooks
   "notebook.lineNumbers": "on",
   "notebook.output.scrolling": true,

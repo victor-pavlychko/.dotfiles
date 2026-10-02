@@ -77,5 +77,8 @@ export PATH="${HOME}/.dotfiles/bin:$PATH"
 alias ls='ls --color=auto'
 alias ll='ls -lh'
 alias lla='ls -lah'
-alias vi='nvim'
 alias tx='tmux new -As work'
+
+if which nvim 2>&1 >/dev/null; then
+    alias vi='nvim'
+fi
