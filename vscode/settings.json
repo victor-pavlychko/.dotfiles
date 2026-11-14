@@ -34,7 +34,7 @@
     "*.jsonnet": "${capture}.json",
     "requirements.txt": "requirements-*.txt",
     "__init__.py": "py.typed",
-    "AGENTS.md": "CLAUDE.md",
+    "AGENTS.md": "CLAUDE.md, INSIGHTS.md",
   },
 
   "freshFileExplorer.autoExpandDepth": 10,
@@ -141,6 +141,32 @@
           "fontStyle": "italic",
         },
       },
+
+      // Markdown headings
+      {
+        "scope": "heading.1.markdown",
+        "settings": { "fontSize": 1.5 }
+      },
+      {
+        "scope": "heading.2.markdown",
+        "settings": { "fontSize": 1.4 }
+      },
+      {
+        "scope": "heading.3.markdown",
+        "settings": { "fontSize": 1.3 }
+      },
+      {
+        "scope": "heading.4.markdown",
+        "settings": { "fontSize": 1.2 }
+      },
+      {
+        "scope": "heading.5.markdown",
+        "settings": { "fontSize": 1.1 }
+      },
+      {
+        "scope": "heading.6.markdown",
+        "settings": { "fontSize": 1.05 }
+      },
     ],
   },
 
@@ -179,7 +205,6 @@
 
   "workbench.editorAssociations": {
     "*.copilotmd": "vscode.markdown.preview.editor",
-    "*.md": "vscode.markdown.editor",
     "*.parquet": "gridMaster.parquetEditor"
   },
 
@@ -195,6 +220,14 @@
     },
   },
 
+  "[markdown]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 128,
+    "editor.wrappingIndent": "indent",
+    "editor.tabSize": 2,
+    // "editor.detectIndentation": false
+  },
+
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml",
   },
@@ -202,4 +235,6 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
+  "lldb.suppressUpdateNotifications": true,
+  "claudeCode.hideOnboarding": true,
 }
