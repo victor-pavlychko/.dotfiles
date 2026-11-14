@@ -42,12 +42,25 @@ function link_directory_contents() {
     done
 }
 
+# Deletes all symlinks in a destination directory pointing to dotfiles
+function unlink_directory_contents() {
+    destination=$1
+
+    for f in "${HOME}/${destination}"/*; do
+        if [[ -L "$f" && "$(readlink "$f")" == "$(realpath .)"* ]]; then
+            echo "Removing symlink $f"
+            rm "$f"
+        fi
+    done
+}
+
 # need to install software: zsh, tmux, nvim, git
 
 link_directory_contents zsh .
 link_directory_contents tmux .
 link_directory_as_whole nvim .config
-link_directory_contents claude .claude
+
+unlink_directory_contents .claude
 
 if [[ "$(uname -s)" == "Darwin" ]]; then
     link_directory_contents vscode "Library/Application Support/Code/User"
