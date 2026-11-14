@@ -194,6 +194,8 @@
   "redhat.telemetry.enabled": false,
   "python.locator": "js",
   "python.analysis.typeCheckingMode": "standard",
+  "lldb.suppressUpdateNotifications": true,
+  "claudeCode.hideOnboarding": true,
   "flake8.args": [
       "--max-line-length=1000",
   ],
@@ -221,6 +223,8 @@
   },
 
   "[markdown]": {
+    // "editor.fontSize": 13,
+    "editor.lineHeight": 1.75,
     "editor.wordWrap": "wordWrapColumn",
     "editor.wordWrapColumn": 128,
     "editor.wrappingIndent": "indent",
@@ -235,6 +239,4 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
-  "lldb.suppressUpdateNotifications": true,
-  "claudeCode.hideOnboarding": true,
 }
